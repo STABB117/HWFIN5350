@@ -9,10 +9,21 @@ print("These are the responses that I can recognize: 'too high', 'too low', and 
 print("My first guess is 50")
 
 guesses = 1
+guess = 50
+difference = 25
 
-response = input()
-
-
-while guesses < 7
-    if response = "too high":
-            
+while guesses <= 7:
+    response = input()
+    if response == "too high":
+        guess = guess - difference
+        print("My next guess is ", guess)
+    
+    elif response == "too low":
+        guess = guess + difference
+        print ("My next guess is ", guess)
+    
+    elif response == "correct":
+        print("I win!")
+        break
+    difference = round((difference + .0001) /2)
+    guesses += 1
